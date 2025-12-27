@@ -1,0 +1,157 @@
+.about {
+  background: var(--bg-secondary);
+  padding: var(--spacing-2xl) 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.about-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-xl);
+  border: 4px solid var(--primary-color);
+}
+
+.about-info {
+  background: var(--bg-primary);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.about-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.about-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-details {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+}
+
+.detail-item {
+  display: flex;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 120px;
+}
+
+.detail-value {
+  color: var(--text-secondary);
+}
+
+.about-summary {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .profile-image {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-info {
+    padding: 1.75rem;
+  }
+
+  .about-info h3 {
+    font-size: 1.375rem;
+  }
+
+  .about-description,
+  .about-summary {
+    font-size: 0.95rem;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.625rem 0;
+  }
+
+  .detail-label {
+    min-width: auto;
+    font-size: 0.95rem;
+  }
+
+  .detail-value {
+    font-size: 0.9rem;
+  }
+
+  .profile-image {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-info {
+    padding: 1.25rem;
+  }
+
+  .about-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .about-description,
+  .about-summary {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about-details {
+    padding: 1rem;
+  }
+
+  .detail-label,
+  .detail-value {
+    font-size: 0.875rem;
+  }
+
+  .profile-image {
+    max-width: 180px;
+  }
+}
+
