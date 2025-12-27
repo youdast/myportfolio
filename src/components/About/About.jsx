@@ -31,11 +31,9 @@ const About = () => {
           </div>
 
           <div className="about-info">
-            <h3>System Analyst And Software Engineer</h3>
+            <h3>Software Engineer</h3>
             <p className="about-description">
               Writing well designed, testable, efficient code by using best software development practices.
-              I am passionate about my work and able to analyze business or user needs and design technical 
-              solutions that suit those needs through to the development process.
             </p>
 
             <div className="about-details">
@@ -52,11 +50,6 @@ const About = () => {
                 <span className="detail-value">yudasign@gmail.com</span>
               </div>
             </div>
-
-            <p className="about-summary">
-              I am proficient in multiple programming languages and can work individually or in groups. 
-              I have expertise in Golang and PHP, along with modern web technologies and cloud platforms.
-            </p>
           </div>
         </motion.div>
       </div>

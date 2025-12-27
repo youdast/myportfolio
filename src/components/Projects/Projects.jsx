@@ -13,43 +13,40 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const data = await portfolioService.getProjects();
-        setProjects(data.data || data);
+        const response = await portfolioService.getProjects();
+        // The API returns { status, code, message, data: [...] }
+        setProjects(response.data || []);
         setError(null);
       } catch (err) {
         console.error('Failed to fetch projects:', err);
         setError('Failed to load projects');
-        // Fallback data with sample projects
+        // Fallback data with sample projects matching the new structure
         setProjects([
           {
             id: 1,
-            title: 'E-Commerce Platform',
-            description: 'Full-stack e-commerce solution with payment integration',
-            image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23667eea" width="600" height="400"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EE-Commerce%3C/text%3E%3C/svg%3E',
-            category: 'Web',
-            tech_stack: ['Laravel', 'Vue.js', 'MySQL'],
-            github_url: 'https://github.com',
-            demo_url: 'https://demo.com'
+            title: 'Training Information System',
+            description: 'A desktop application for managing employee training activities',
+            image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23667eea" width="600" height="400"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ETraining System%3C/text%3E%3C/svg%3E',
+            role: 'Fullstack Developer',
+            tech_stacks: [
+              { id: 1, name: 'Go', icon: '' },
+              { id: 2, name: 'PHP', icon: '' }
+            ],
+            source_link: '',
+            demo_link: ''
           },
           {
             id: 2,
-            title: 'Task Management App',
-            description: 'Collaborative task management with real-time updates',
-            image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23764ba2" width="600" height="400"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ETask Manager%3C/text%3E%3C/svg%3E',
-            category: 'App & Web',
-            tech_stack: ['Go', 'React', 'PostgreSQL'],
-            github_url: 'https://github.com',
-            demo_url: 'https://demo.com'
-          },
-          {
-            id: 3,
-            title: 'API Gateway Service',
-            description: 'Microservices API gateway with rate limiting',
-            image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%2348cae4" width="600" height="400"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EAPI Gateway%3C/text%3E%3C/svg%3E',
-            category: 'Web',
-            tech_stack: ['Go', 'Redis', 'Docker'],
-            github_url: 'https://github.com',
-            demo_url: null
+            title: 'Project Risk Information System',
+            description: 'A system for project risk management using the House of Risk methodology.',
+            image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23764ba2" width="600" height="400"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ERisk System%3C/text%3E%3C/svg%3E',
+            role: 'Fullstack Developer',
+            tech_stacks: [
+              { id: 3, name: 'Laravel', icon: '' },
+              { id: 4, name: 'MySQL', icon: '' }
+            ],
+            source_link: '',
+            demo_link: ''
           }
         ]);
       } finally {
@@ -142,24 +139,24 @@ const Projects = () => {
                 />
                 <div className="project-overlay">
                   <div className="project-links">
-                    {project.github_url && (
+                    {project.source_link && (
                       <a 
-                        href={project.github_url} 
+                        href={project.source_link} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="project-link"
-                        aria-label="View on GitHub"
+                        aria-label="View Source Code"
                       >
                         <FiGithub />
                       </a>
                     )}
-                    {project.demo_url && (
+                    {project.demo_link && (
                       <a 
-                        href={project.demo_url} 
+                        href={project.demo_link} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="project-link"
-                        aria-label="View live demo"
+                        aria-label="View Live Demo"
                       >
                         <FiExternalLink />
                       </a>
@@ -170,12 +167,13 @@ const Projects = () => {
               
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
+                {project.role && <p className="project-role">{project.role}</p>}
                 <p className="project-description">{project.description}</p>
                 
-                {project.tech_stack && project.tech_stack.length > 0 && (
+                {project.tech_stacks && project.tech_stacks.length > 0 && (
                   <div className="project-tech">
-                    {project.tech_stack.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
+                    {project.tech_stacks.map((tech, index) => (
+                      <span key={tech.id || index} className="tech-tag">{tech.name}</span>
                     ))}
                   </div>
                 )}
@@ -183,6 +181,7 @@ const Projects = () => {
             </motion.div>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

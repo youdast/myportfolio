@@ -10,12 +10,12 @@ const Hero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = [
-    'System Analyst',
     'Software Engineer',
+    'Full Stack Developer',
+    'System Analyst',
     'Web Developer',
     'Frontend Developer',
     'Backend Developer',
-    'Full Stack Developer',
   ];
 
   useEffect(() => {
@@ -134,7 +134,7 @@ const Hero = () => {
             <a href="https://github.com/youdast" target="_blank" rel="noopener noreferrer" className="social-link">
               <FiGithub />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://id.linkedin.com/in/yudasatria" target="_blank" rel="noopener noreferrer" className="social-link">
               <FiLinkedin />
             </a>
             <a href="mailto:yudasign@gmail.com" className="social-link">

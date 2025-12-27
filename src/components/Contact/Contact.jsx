@@ -55,7 +55,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://id.linkedin.com/in/yudasatria" target="_blank" rel="noopener noreferrer">
                   Connect with me
                 </a>
               </div>

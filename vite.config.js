@@ -12,7 +12,7 @@ export default defineConfig({
     // If your site is https, use wss for HMR
     hmr: {
       protocol: 'wss',
-      host: 'portfolio.sycode.fun', // public hostname the browser uses
+      host: 'portfolio.sykou.site', // public hostname the browser uses
       port: 3001,
       clientPort: 443,              // HMR server port exposed by proxy
     },

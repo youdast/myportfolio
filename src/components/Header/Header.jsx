@@ -5,9 +5,12 @@ import './Header.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', theme);
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };

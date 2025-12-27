@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="footer-info">
             <h3 className="footer-logo">Yuda Satria</h3>
             <p className="footer-description">
-              System Analyst & Software Engineer passionate about creating elegant solutions.
+              Software Engineer passionate about creating elegant solutions.
             </p>
           </div>
 
@@ -24,7 +24,7 @@ const Footer = () => {
               <li><a href="#about">About</a></li>
               <li><a href="#skills">Skills</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#architecture">Architecture</a></li>
+              {/* <li><a href="#architecture">Architecture</a></li> */}
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -35,7 +35,7 @@ const Footer = () => {
               <a href="https://github.com/youdast" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <FiGithub />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://id.linkedin.com/in/yudasatria" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FiLinkedin />
               </a>
               <a href="mailto:yudasign@gmail.com" aria-label="Email">

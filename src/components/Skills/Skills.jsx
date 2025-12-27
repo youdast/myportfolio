@@ -87,10 +87,9 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Skills</h2>
+          <h2>SKILLS</h2>
           <p className="section-subtitle">
-            Software Engineer need a combination of technical skills, soft skills, and continuous learning 
-            to enable us to create apps that are functional and secure.
+            "Programming isn’t about what you know; it’s about what you can figure out." – Chris Pine
           </p>
         </motion.div>
 
@@ -101,7 +100,7 @@ const Skills = () => {
         )}
 
         <motion.div 
-          className="skills-grid"
+          className="skills-container"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -110,20 +109,14 @@ const Skills = () => {
           {skills.map((skill) => (
             <motion.div
               key={skill.id}
-              className="skill-card"
+              className="skill-tag"
               variants={itemVariants}
               whileHover={{ 
-                y: -10,
-                transition: { duration: 0.3 }
+                y: -5,
+                transition: { duration: 0.2 }
               }}
             >
-              <div className="skill-icon">
-                <span>{skill.name.charAt(0)}</span>
-              </div>
-              <h3 className="skill-name">{skill.name}</h3>
-              {skill.category && (
-                <span className="skill-category">{skill.category}</span>
-              )}
+              <span className="skill-name">{skill.name}</span>
             </motion.div>
           ))}
         </motion.div>

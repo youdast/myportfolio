@@ -221,6 +221,10 @@ section {
   border-radius: 2px;
 }
 
+.section-subtitle {
+  margin-top: 3rem;
+}
+
 /* Loading Spinner */
 .spinner {
   width: 50px;
