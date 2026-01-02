@@ -22,4 +22,10 @@ export default defineConfig({
     //   cert: fs.readFileSync('path/to/fullchain.pem'),
     // },
   },
+  preview: {
+    host: true,
+    port: 3001,
+    strictPort: true,
+    allowedHosts: true,
+  },
 });
